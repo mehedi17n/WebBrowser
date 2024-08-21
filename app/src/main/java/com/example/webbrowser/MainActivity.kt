@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var webView: WebView
     private lateinit var lottieLoading: LottieAnimationView
     private lateinit var lottieSearch: LottieAnimationView
+    private lateinit var reloadSearch: LottieAnimationView
     private lateinit var cancelButton: ImageButton
     private lateinit var editText: EditText
     private lateinit var prevButton: ImageButton
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         webView = findViewById(R.id.webView)
         lottieLoading = findViewById(R.id.lottieLoading)
         lottieSearch = findViewById(R.id.lottieSearch)
+        reloadSearch = findViewById(R.id.reloadSearch)
         cancelButton = findViewById(R.id.cancelButton)
         editText = findViewById(R.id.editText)
         prevButton = findViewById(R.id.prevButton)
@@ -53,6 +55,8 @@ class MainActivity : AppCompatActivity() {
                 super.onPageFinished(view, url)
                 lottieSearch.visibility = View.GONE
                 lottieLoading.visibility = View.GONE
+                reloadSearch.visibility = View.GONE
+                reloadButton.visibility = View.VISIBLE
                 cancelButton.visibility = View.VISIBLE
             }
 
@@ -97,6 +101,8 @@ class MainActivity : AppCompatActivity() {
         reloadButton.setOnClickListener {
             if (webView.url != null) {  // Ensure there is a page to reload
                 webView.reload()
+                reloadButton.visibility = View.GONE
+                reloadButton.visibility = View.VISIBLE
             } else {
                 showToast("No page to reload")
             }

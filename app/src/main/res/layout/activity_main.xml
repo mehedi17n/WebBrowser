@@ -59,6 +59,18 @@
 
         </LinearLayout>
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/reloadSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            app:lottie_rawRes="@raw/reload_animation"
+            app:lottie_loop="false"
+            app:lottie_autoPlay="true"
+            android:visibility="gone" />
+
         <EditText
             android:id="@+id/editText"
             android:hint="Enter Web Url"
@@ -108,8 +120,8 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottieLoading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_centerInParent="true"
             app:lottie_rawRes="@raw/loading_animation"
             app:lottie_autoPlay="true"
